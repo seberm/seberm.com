@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+I am transitioning GPG keys from an old 2048-bit key to a new 4096-bit RSA key.
+The old key has not been compromised and will continue to be valid for some
+time, but I prefer all future correspondence to be encrypted to the new key,
+and will be making signatures with the new key going forward.
+
+This transition document is signed with both keys to validate the transition.
+
+If you have signed my old key, I would appreciate signatures on my new key as
+well, provided that your signing policy permits that without reauthenticating
+me.
+
+The old key, which I am transitional away from, is:
+
+pub   2048R/0x791F8347EB1A9F78 2011-12-19 [expires: 2016-12-17]
+      Key fingerprint = EF11 DF42 5448 B437 1E8C  5BE1 791F 8347 EB1A 9F78
+
+The new key, to which I am transitioning, is:
+
+pub   4096R/0x1FA2DBE674387CC3 2015-09-08
+      Key fingerprint = 0AF6 4C3B 1F12 14B3 8C8C  5786 1FA2 DBE6 7438 7CC3
+
+To fetch the full new key from a public key server using GnuPG, run:
+
+  $ gpg --keyserver pgp.mit.edu --recv-key 0x1FA2DBE674387CC3
+
+If you have already validated my old key, you can then validate that the new
+key is signed by my old key:
+
+  $ gpg --check-sigs 0x1FA2DBE674387CC3
+
+
+To verify the integrity of this statement:
+  $ wget -q -O- https://seberm.com/gpg-key-transition-2015-Dec-28.txt | gpg --verify
+-----BEGIN PGP SIGNATURE-----
+
+iQIcBAEBCgAGBQJWgbnCAAoJEII7rpn4vh48m1cP/0PPApXpY2e/zwe9DgfQUhCc
+vAhJJLbq6xqYCyV9ANocKgb9CfAjFVhoJbEn9IZ4wD4xaq+buw1/7Io8dWmuFcy1
+dlLz3G7UCnAbb7y+2i8GdGQihG4ZJ7XeKNlFxqR1FYHvipYIX07QA9GfywinGm2+
+v+VytlOMeZ9xFVcj/0yoFZHow6RbL+A37wAkjGKgofwR9eJsH1DJmQcORBGXSQkJ
+V/qrfQfjLvKQBIeZToDCVFhW6BZf2LvAAhsgTUzJKFUtppZWZkPluLrAYvZD5QZ5
+mcpi/LISBq70bNgLRHsvX9nr2DZAQCvQQH5pt/NLsxrSkvZhUxwdEMq2IIX5yplp
+oCUb/W/7/H9SF/j9tRCbpk5Ey206Ff6O+bxaXVYyMuy/sZUFTURRsX67acSC9V5S
+4JRRYDnadNFZoMmX3/5Wd+GtwL2eZHV6ysEmQEpREfZczxyZiPzbrg5eqz5Mb+7S
+e3W5zYyaM9dgfCDxGyNY1H79bk0rZuobp04fohfCqfVBP1dz2408j0VLejlaigBD
+rfIxiKPQ7qPhsP2AMjhaVdQdDmtXxluSYYw2cDCyCJzBzYY8sLHXZWN6cdIjvXZB
+QS7HEl8z/5XAe8WOLiCo/6nHhFGKIzZFbMKWDTqt+1fQsyIVlj7QqbT+nF2Z0Sx3
+/6j1CZ6yJEVVeSwQnp3L
+=51Z2
+-----END PGP SIGNATURE-----
