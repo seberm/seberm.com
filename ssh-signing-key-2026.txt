@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Starting in 2026, I will also use the following SSH key for signing my
+commits and tags:
+
+sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBIFYrdlCeDk1ZaiZ7/PCqdYxdYk0XXlipyZ9iW3Q63WHkTYociIXXF9rCpUAhsgEJDsatNe2+WSo2pYZbimot5MAAAAEc3NoOg==
+
+Fingerprint: SHA256:2o/0Op+64zKgF4oMaS0LGOiGPNDsibaqX6g8qMf5Hz0
+
+My GPG key remains valid and unchanged:
+
+pub   rsa4096/0x1FA2DBE674387CC3 2015-09-08
+      Key fingerprint = 0AF6 4C3B 1F12 14B3 8C8C  5786 1FA2 DBE6 7438 7CC3
+
+This statement is signed with my GPG key to tie the SSH key to it.
+
+To verify the integrity of this statement:
+  $ wget -q -O- https://seberm.com/ssh-signing-key-2026.txt | gpg --verify
+
+To prove that I also hold the private part of the SSH key, this complete
+signed statement is additionally signed with the SSH key itself (the
+signature is published next to it). To verify, with OpenSSH 8.2 or newer:
+  $ wget https://seberm.com/ssh-signing-key-2026.txt \
+         https://seberm.com/ssh-signing-key-2026.txt.sig \
+         https://seberm.com/allowed_signers
+  $ ssh-keygen -Y verify -f allowed_signers -I seberm@seberm.com \
+        -n file -s ssh-signing-key-2026.txt.sig < ssh-signing-key-2026.txt
+
+The SSH key is also published at https://seberm.com/ssh.html
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEb6VOpv2s03VHGoilgjuumfi+HjwFAmrP/IsACgkQgjuumfi+
+Hjz4tg//V0xy37sDHV/fBdjjIF9zZ15M/gRuywuLM5tR5OwErZvVfxWDCLyYMuss
+2q6hagoxHPuaf7HKqkqSDlbrSpDNJcvAKMMGdeMaYy+127iS3zvcYkni+AjsHx5K
+ZeJyhSTtbO0JHlaw2KLYCL5nND6hQIi20XOkDjDoY1ocofg1jgh2DENsWgfP92Mh
+ZFxuL3YorTC+Oebx7nAXIoxF4qCeCFFuhN/9fmKKIrAGiD2+yHj0LE9o93loB/F6
+5KVejvzGHn6xOvuGyXp60ta60ulK3au41JtnVpdz0+z7nAJsKkoY2OMJR/JEhHqR
+cpeemKpQKQ/ILzcCMZcyjfbMuZ9we9TcAsCJ6xX7IgNoe972S3TNaCZlXAE9np1H
+4XRYSCoZmp/khWym7nbUb5JSi3R31yzMGXQFL7NYsDZkeqdO2HQbZVljpWnyNhy5
+YeNPpJHzJ3A25ZEthVv22znRUEs38AxjNxCtgakOhlSmUjn6+lfh9J9OFlKw7jY+
+xkaC+XicMeQ5PUwk3euLFIuN9aiHx+C6ZtByAGfOXBo/7mppGlE+o3bxUdXPLqe4
+icLTdmoBbSRgX1T+PIyk9HmWpaM4IzyeRQM9O+kR5fGOyf6x3fjA7Be1K+RokNZS
+hJRlYq0Y53MPgC8Ma0HyoW9/L2Z98xE7MyR1BECfuyZPtAwZrg0=
+=9ijh
+-----END PGP SIGNATURE-----

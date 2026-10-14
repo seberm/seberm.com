@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="light dark">
+	<meta name="description" content="42">
+	<meta name="author" content="seberm">
+	<link rel="icon" href="favicon.ico" sizes="any">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="stylesheet" href="style.css">
+
+	<title>SSH | Seberm.com</title>
+</head>
+
+<body>
+	<main>
+		<h1>SSH signing keys</h1>
+
+		<h2>ecdsa-sk</h2>
+		<p class="fpr">SHA256:2o/0Op+64zKgF4oMaS0LGOiGPNDsibaqX6g8qMf5Hz0</p>
+		<pre><code>sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBIFYrdlCeDk1ZaiZ7/PCqdYxdYk0XXlipyZ9iW3Q63WHkTYociIXXF9rCpUAhsgEJDsatNe2+WSo2pYZbimot5MAAAAEc3NoOg==</code></pre>
+
+		<p>
+			<a href="ssh-signing-key-2026.txt">GPG-signed statement</a><br>
+			<a href="ssh-signing-key-2026.txt.sig">SSH signature of the statement</a><br>
+			<a href="allowed_signers">allowed_signers</a>
+		</p>
+
+		<h2>Verify</h2>
+		<p class="muted">The statement is signed with my GPG key and, to prove possession of the private key, with the SSH key itself (OpenSSH 8.2 or newer).</p>
+		<pre><code>$ wget -q -O- https://seberm.com/ssh-signing-key-2026.txt | gpg --verify
+
+$ wget https://seberm.com/ssh-signing-key-2026.txt \
+       https://seberm.com/ssh-signing-key-2026.txt.sig \
+       https://seberm.com/allowed_signers
+$ ssh-keygen -Y verify -f allowed_signers -I seberm@seberm.com \
+      -n file -s ssh-signing-key-2026.txt.sig &lt; ssh-signing-key-2026.txt</code></pre>
+
+		<p class="back"><a href="index.html">&larr; Back</a></p>
+	</main>
+</body>
+</html>
